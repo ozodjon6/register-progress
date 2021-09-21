@@ -28,21 +28,22 @@
     <div class="registry-part__conditions conditions">
       <ul class="conditions__list">
         <router-link
-            class="conditions__item is-active"
+            class="conditions__item"
             to="/company-information"
             tag="li"
+            active-class="is-active"
         >
           <div class="conditions__click">
             <div class="conditions__number">1
-              <div class="conditions__number-icons">
+              <div class="conditions__number-icons is-success">
                 <i class="click-page__warning conditions__warning">
                   <svg class="icon-warning icon-svg" width="4" height="10">
                     <use xlink:href="@/assets/images/src/icons/sprite-all.svg#mark-icon"></use>
                   </svg>
                 </i>
-                <i class="click-page__success conditions__success">
+                <i class="click-page__success conditions__success active">
                   <svg class="icon-success icon-svg" width="10" height="8">
-                    <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                    <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                   </svg>
                 </i>
               </div>
@@ -54,10 +55,11 @@
             class="conditions__item"
             to="/transaction-information"
             tag="li"
+            active-class="is-active"
         >
           <div class="conditions__click">
             <div class="conditions__number">2
-              <div class="conditions__number-icons">
+              <div class="conditions__number-icons is-warning">
                 <i class="click-page__warning conditions__warning">
                   <svg class="icon-warning icon-svg" width="4" height="10">
                     <use xlink:href="@/assets/images/src/icons/sprite-all.svg#mark-icon"></use>
@@ -65,7 +67,7 @@
                 </i>
                 <i class="click-page__success conditions__success">
                   <svg class="icon-success icon-svg" width="10" height="8">
-                    <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                    <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                   </svg>
                 </i>
               </div>
@@ -73,10 +75,15 @@
             <div class="conditions__name">Transaction information</div>
           </div>
         </router-link>
-        <li class="conditions__item">
+        <router-link
+            class="conditions__item"
+            to="/company-structure"
+            tag="li"
+            active-class="is-active"
+            >
           <a href="#" class="conditions__click">
             <div class="conditions__number">3
-              <div class="conditions__number-icons">
+              <div class="conditions__number-icons is-success">
                 <i class="click-page__warning conditions__warning">
                   <svg class="icon-warning icon-svg" width="4" height="10">
                     <use xlink:href="@/assets/images/src/icons/sprite-all.svg#mark-icon"></use>
@@ -84,18 +91,23 @@
                 </i>
                 <i class="click-page__success conditions__success">
                   <svg class="icon-success icon-svg" width="10" height="8">
-                    <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                    <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                   </svg>
                 </i>
               </div>
             </div>
             <div class="conditions__name">Company structure</div>
           </a>
-        </li>
-        <li class="conditions__item">
+        </router-link>
+        <router-link
+            class="conditions__item"
+            to="/upload-documents"
+            tag="li"
+            active-class="is-active"
+        >
           <a href="#" class="conditions__click">
             <div class="conditions__number">4
-              <div class="conditions__number-icons">
+              <div class="conditions__number-icons is-success">
                 <i class="click-page__warning conditions__warning">
                   <svg class="icon-warning icon-svg" width="4" height="10">
                     <use xlink:href="@/assets/images/src/icons/sprite-all.svg#mark-icon"></use>
@@ -103,18 +115,23 @@
                 </i>
                 <i class="click-page__success conditions__success">
                   <svg class="icon-success icon-svg" width="10" height="8">
-                    <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                    <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                   </svg>
                 </i>
               </div>
             </div>
             <div class="conditions__name">Upload documents</div>
           </a>
-        </li>
-        <li class="conditions__item">
+        </router-link>
+        <router-link
+            class="conditions__item"
+            to="/review-submit"
+            tag="li"
+            active-class="is-active"
+        >
           <a href="#" class="conditions__click">
             <div class="conditions__number">5
-              <div class="conditions__number-icons">
+              <div class="conditions__number-icons is-success">
                 <i class="click-page__warning conditions__warning">
                   <svg class="icon-warning icon-svg" width="4" height="10">
                     <use xlink:href="@/assets/images/src/icons/sprite-all.svg#mark-icon"></use>
@@ -122,14 +139,14 @@
                 </i>
                 <i class="click-page__success conditions__success">
                   <svg class="icon-success icon-svg" width="10" height="8">
-                    <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                    <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                   </svg>
                 </i>
               </div>
             </div>
             <div class="conditions__name">Review and submit</div>
           </a>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>

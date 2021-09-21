@@ -19,7 +19,7 @@
                   </div>
                   <div class="company-reg__wrp">
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Country of registration
+                      <label class="company-reg__label"> Country of registration
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__choose">
@@ -33,7 +33,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Company name
+                      <label class="company-reg__label"> Company name
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__pole">
@@ -42,7 +42,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field is-active">
-                      <label class="company-reg__lable form-page__label">Registration number <span class="form-page__required form-page__required_margin">(required)</span></label>
+                      <label class="company-reg__label form-page__label">Registration number <span class="form-page__required form-page__required_margin">(required)</span></label>
                       <div class="form-page__question company-reg__question" id="question-btn">
                         <svg class="icon-question" width="6" height="8">
                           <use xlink:href="@/assets/images/src/icons/sprite.svg#question"></use>
@@ -57,7 +57,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Date of registration
+                      <label class="company-reg__label"> Date of registration
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__pole">
@@ -78,7 +78,7 @@
                   </div>
                   <div class="company-reg__wrp">
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Number and street name
+                      <label class="company-reg__label"> Number and street name
                         <span class="company-reg__rquired"></span>
                       </label>
                       <div class="company-reg__pole">
@@ -89,14 +89,14 @@
                     </div>
                     <div class="company-reg__pole-wrp company-reg__field_adress">
                       <div class="company-reg__field mr24">
-                        <label class="company-reg__lable"> City
+                        <label class="company-reg__label"> City
                           <span class="company-reg__rquired"></span>
                         </label>
                         <input type="text" class="company-reg__input" required>
                         <div class="error-text">Please, don't forget  your City</div>
                       </div>
                       <div class="company-reg__field">
-                        <label class="company-reg__lable"> Postcode
+                        <label class="company-reg__label"> Postcode
                           <span class="company-reg__rquired">(optional)</span>
                         </label>
                         <input type="text" class="company-reg__input" required>
@@ -114,18 +114,18 @@
                   </div>
                   <div class="company-reg__wrp">
                     <div class="company-reg__field">
-                      <label class="company-reg__lable company-reg__lable_checkbox">
+                      <label class="company-reg__label company-reg__label_checkbox">
                         <input type="checkbox" class="company-reg__input company-reg__input_checkbox" required>
                         <span class="company-reg__mask">
 																<svg class="icon-mask icon-svg" width="12" height="9">
-																	<use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+																	<use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
 																</svg>
 															</span>
                         <span class="company-reg__checkbox-text">Same as registered address </span>
                       </label>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Number and street name
+                      <label class="company-reg__label"> Number and street name
                         <span class="company-reg__rquired"></span>
                       </label>
                       <div class="company-reg__pole">
@@ -136,14 +136,14 @@
                     </div>
                     <div class="company-reg__pole-wrp company-reg__field_adress">
                       <div class="company-reg__field mr24">
-                        <label class="company-reg__lable"> City
+                        <label class="company-reg__label"> City
                           <span class="company-reg__rquired"></span>
                         </label>
                         <input type="text" class="company-reg__input" required>
                         <div class="error-text">Please, don't forget  your City</div>
                       </div>
                       <div class="company-reg__field">
-                        <label class="company-reg__lable"> Postcode
+                        <label class="company-reg__label"> Postcode
                           <span class="company-reg__rquired">(optional)</span>
                         </label>
                         <input type="text" class="company-reg__input" required>
@@ -161,7 +161,7 @@
                   </div> -->
                   <div class="company-reg__wrp">
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Company E-mail
+                      <label class="company-reg__label"> Company E-mail
                         <span class="company-reg__rquired"></span>
                       </label>
                       <div class="company-reg__pole">
@@ -170,7 +170,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Company website
+                      <label class="company-reg__label"> Company website
                         <span class="company-reg__rquired"></span>
                       </label>
                       <div class="company-reg__pole">
@@ -179,7 +179,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Company type
+                      <label class="company-reg__label"> Company type
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__choose">
@@ -194,7 +194,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable"> Company size
+                      <label class="company-reg__label"> Company size
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__choose">
@@ -209,7 +209,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable">Industry
+                      <label class="company-reg__label">Industry
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__choose">
@@ -224,7 +224,7 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable">Business description
+                      <label class="company-reg__label">Business description
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__pole">
@@ -233,29 +233,28 @@
                       </div>
                     </div>
                     <div class="company-reg__field">
-                      <label class="company-reg__lable company-reg__lable_checkbox company-reg__lable_buseness">
+                      <label class="company-reg__label company-reg__label_checkbox company-reg__label_buseness">
                         <input type="checkbox" class="company-reg__input company-reg__input_checkbox" id="public" required>
                         <span class="company-reg__mask">
-																<svg class="icon-mask icon-svg" width="12" height="9">
-																	<use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
-																</svg>
-															</span>
+                            <svg class="icon-mask icon-svg" width="12" height="9">
+                              <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
+                            </svg>
+                        </span>
                         <span class="company-reg__checkbox-text">My business is regulated  </span>
                       </label>
                     </div>
                     <div class="company-reg__business" id="business-js">
                       <div class="company-reg__field">
-                        <label class="company-reg__lable"> Regulator's name
+                        <label class="company-reg__label"> Regulator's name
                           <span class="company-reg__rquired"></span>
                         </label>
                         <div class="company-reg__pole">
                           <input type="text" class="company-reg__input" required>
                           <div class="error-text">Please, don't forget your Regulator's name</div>
                         </div>
-
                       </div>
                       <div class="company-reg__field">
-                        <label class="company-reg__lable"> Licence number
+                        <label class="company-reg__label"> Licence number
                           <span class="company-reg__rquired"></span>
                         </label>
                         <div class="company-reg__pole">

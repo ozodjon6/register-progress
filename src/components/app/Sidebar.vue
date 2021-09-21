@@ -1,8 +1,8 @@
 <template>
-  <aside class="sidebar-menu">
+  <aside class="sidebar-menu" :class="{open: value}">
     <div class="sidebar-menu__head">
       <div class="sidebar-menu-logo">
-        <a href="#" class="site-logo">
+        <a href="#" class="site-logo" @click.prevent="toMenu">
           <img src="@/assets/images/src/icons/site-logo.svg" alt="">
         </a>
         <a href="#" class="snp-logo snp-logo__sidebar">
@@ -445,7 +445,11 @@
               <li class="dashboard-menu__content">
                 <div class="dashboard-menu__content-wrap">
                   <div class="dashboard-menu__title">
-                    <div class="dashboard-menu__title-text">Log out</div>
+                    <router-link
+                        class="dashboard-menu__title-text"
+                        to="/login"
+                        tag="div"
+                    >Log out</router-link>
                   </div>
                   <div class="dashboard-menu__wrapper">
                     <ul class="dropdown-list">
@@ -458,7 +462,7 @@
               </li>
             </ul>
           </li>
-          <li class="dashboard-menu__item dashboard-menu__item_next" id="sidebar-js">
+          <li class="dashboard-menu__item dashboard-menu__item_next" @click.prevent="$emit('isOpenMenu')">
             <ul class="dashboard-menu__inner dashboard-menu__inner_next">
               <li class="dashboard-menu__type dashboard-menu__type_next">
                 <a href="#" class="dashboard-menu__icon">
@@ -477,7 +481,16 @@
 
 <script>
 export default {
-  name: "Sidebar"
+  name: "Sidebar",
+  props: ['value'],
+  data: () => ({
+
+  }),
+  methods: {
+    toMenu() {
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 

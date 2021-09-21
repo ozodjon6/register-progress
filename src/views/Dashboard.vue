@@ -38,7 +38,7 @@
                       </i>
                       <i class="click-page__success active">
                         <svg class="icon-success icon-svg" width="10" height="8">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                          <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                         </svg>
                       </i>
                     </div>
@@ -81,7 +81,7 @@
                       </i>
                       <i class="click-page__success">
                         <svg class="icon-success icon-svg" width="10" height="8">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                          <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                         </svg>
                       </i>
                     </div>
@@ -97,7 +97,7 @@
                       </i>
                       <i class="click-page__success">
                         <svg class="icon-success icon-svg" width="10" height="8">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                          <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                         </svg>
                       </i>
                       <i class="click-page__right">
@@ -110,7 +110,7 @@
                 </router-link>
                 <router-link
                     class="active-account__item br-bottom"
-                    to="/"
+                    to="/company-structure"
                     tag="div"
                     >
                   <div class="click-page d-flex a-center">
@@ -123,7 +123,7 @@
                       </i>
                       <i class="click-page__success">
                         <svg class="icon-success icon-svg" width="10" height="8">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                          <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                         </svg>
                       </i>
                     </div>
@@ -139,7 +139,7 @@
                       </i>
                       <i class="click-page__success">
                         <svg class="icon-success icon-svg" width="10" height="8">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                          <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                         </svg>
                       </i>
                       <i class="click-page__right active">
@@ -152,7 +152,7 @@
                 </router-link>
                 <router-link
                     class="active-account__item br-bottom"
-                    to="/"
+                    to="/upload-documents"
                     tag="div"
                 >
                   <div class="click-page d-flex a-center">
@@ -165,7 +165,7 @@
                       </i>
                       <i class="click-page__success">
                         <svg class="icon-success icon-svg" width="10" height="8">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                          <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                         </svg>
                       </i>
                     </div>
@@ -181,7 +181,7 @@
                       </i>
                       <i class="click-page__success">
                         <svg class="icon-success icon-svg" width="10" height="8">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#check"></use>
+                          <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
                         </svg>
                       </i>
                       <i class="click-page__right active">

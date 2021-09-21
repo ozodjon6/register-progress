@@ -1,13 +1,13 @@
 <template>
   <header class="page-header header-1">
     <div class="container custom-container">
-      <div class="page-headr__inner page-header__dashboard">
+      <div class="page-header__inner page-header__dashboard">
         <div class="page-header__tab-logo">
           <a href="#" class="site-logo site-logo__tab">
             <img src="@/assets/images/src/icons/site-logo.svg" alt="">
           </a>
         </div>
-        <div class="page-heaedr__left d-flex a-center">
+        <div class="page-header__left d-flex a-center">
           <div class="account-view d-flex a-center">
             <div class="account-view__title">GBP account:</div>
             <div class="account-view__count">
@@ -18,11 +18,15 @@
               <div class="account-view__currency">
                 <div class="currency-country">
                   £ <strong class="count-strong">28,900.10</strong>
-                  <img src="@/assets/images/src/icons/flag-uk.svg" alt="">
+                  <span class="currency-country__image">
+                    <img src="@/assets/images/src/icons/flag-uk.svg" alt="">
+                  </span>
                 </div>
                 <div class="currency-country">
                   € <strong class="count-strong">00.00</strong>
-                  <img src="@/assets/images/src/icons/flag-eu.svg" alt="">
+                  <span class="currency-country__image">
+                    <img src="@/assets/images/src/icons/flag-eu.svg" alt="">
+                  </span>
                 </div>
                 <a href="#" class="account-view__btn btn">Open acconts</a>
               </div>
@@ -79,12 +83,16 @@
                 <use xlink:href="@/assets/images/src/icons/sprite-all.svg#moon"></use>
               </svg>
             </div>
-            <div class="account-user__humburger" id="sidebar-js">
+            <div class="account-user__hamburger" @click.prevent="$emit('isOpenMenu')">
               <svg class="account-user__icon icon-svg icon-moon">
                 <use xlink:href="@/assets/images/src/icons/sprite-all.svg#humburger"></use>
               </svg>
             </div>
-            <span class="account-user__logout">Log out</span>
+            <router-link
+                class="account-user__logout"
+                to="/login"
+                tag="span"
+            >Log out</router-link>
           </div>
         </div>
       </div>

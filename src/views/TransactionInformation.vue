@@ -3,9 +3,6 @@
     <div class="container">
       <div class="registry-part__inner trans-part__inner">
         <RegistryPartHeader/>
-        <!-- <div class="registry-aprt__error is-error">
-          Some details are missing. Check the menu on the left to see which sections need your attention.
-                      </div> -->
         <div class="trans-part__body">
           <div class="trans-part__wrapper">
             <form action="#" class="trans-part__form">
