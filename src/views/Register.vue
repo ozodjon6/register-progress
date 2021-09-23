@@ -6,7 +6,7 @@
           <div class="page-header__inner">
             <div class="page-header__logo">
               <a href="#" class="site-logo">
-                <img src="@/assets/images/src/icons/site-logo.svg" alt="Site-Logo" />
+                <img src="@/assets/images/src/icons/site-logo.svg" alt="Site-Logo"/>
               </a>
             </div>
             <div class="page-header__sign">
@@ -57,13 +57,29 @@
               <h2 class="form-page__title">Sign up</h2>
               <form action="#" class="form-page__form" @submit.prevent="submitHandler">
                 <div class="form-page__wrp">
-                  <label class="form-page__label">Your Name and Surname <span class="form-page__required">(required)</span></label>
+                  <label class="form-page__label">Your Name and Surname <span
+                      class="form-page__required">(required)</span></label>
                   <div class="form-page__pole">
                     <input
                         type="text"
                         class="form-page__input"
+                        v-model.trim="name"
+                        :class="{
+                          invalid: ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.minLength),
+                          valid: ($v.name.$dirty && $v.name.required) && ($v.name.$dirty && $v.name.minLength)
+                        }"
                     >
                   </div>
+                  <small class="error-text"
+                         v-if="$v.name.$dirty && !$v.name.required"
+                  >
+                    The name field must not be empty
+                  </small>
+                  <small class="error-text"
+                         v-else-if="$v.name.$dirty && !$v.name.minLength"
+                  >
+                    The email field must not be empty {{ $v.name.$params.minLength.min }} digital now he {{ name.length }}
+                  </small>
                 </div>
                 <div class="form-page__wrp">
                   <label class="form-page__label">Your email address <span class="form-page__required">(required)</span></label>
@@ -76,17 +92,40 @@
                              invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email),
                              valid: ($v.email.$dirty && $v.email.required) && ($v.email.$dirty && $v.email.email)
                            }"
-                            >
+                    >
                   </div>
+                  <small class="error-text"
+                         v-if="$v.email.$dirty && !$v.email.required"
+                  >
+                    The name field must not be empty
+                  </small>
+                  <small class="error-text"
+                         v-else-if="$v.email.$dirty && !$v.email.email"
+                  >
+                    Ввидите корректный email
+                  </small>
                 </div>
                 <div class="form-page__wrp">
-                  <label class="form-page__label">Pick a password <span class="form-page__required form-page__required_margin">(required)</span></label>
+                  <label class="form-page__label">Pick a password <span
+                      class="form-page__required form-page__required_margin">(required)</span></label>
                   <div class="form-page__pole">
-                    <input type="password" class="form-page__input form-page__input_valid" id="password-field">
-                    <div class="icon-error">&#33;</div>
-                    <div class="icon-done"></div>
-                    <ul class="checker-list">
-                      <li class="checker-list__item checker-length">
+                    <input type="password"
+                           class="form-page__input form-page__input_valid"
+                           @focus="isOpen = true"
+                           @blur="isOpen = false"
+                           v-model.trim="password"
+                           :class="{
+                             invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.password),
+                             valid: ($v.password.$dirty && $v.password.required) && ($v.password.$dirty && $v.password.password)
+                           }"
+                    >
+                    <ul class="checker-list"
+                        v-model="isOpen"
+                        :class="{active: isOpen}"
+                    >
+                      <li class="checker-list__item"
+                          :class="has_minimum_length ? 'success' : '' "
+                          >
 												  <span class="checker-list__icon">
 													  <svg class="icon-check" width="6" height="5">
 														  <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
@@ -94,7 +133,9 @@
 												  </span>
                         8 or more characters
                       </li>
-                      <li class="checker-list__item checker-number">
+                      <li class="checker-list__item"
+                          :class="has_number ? 'success' : '' "
+                      >
 												  <span class="checker-list__icon">
 													  <svg class="icon-check" width="6" height="5">
 														  <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
@@ -102,32 +143,52 @@
 												  </span>
                         Numbers
                       </li>
-                      <li class="checker-list__item checker-letters">
+                      <li class="checker-list__item"
+                          :class="has_letters ? 'success' : '' "
+                          >
 												  <span class="checker-list__icon">
 													  <svg class="icon-check" width="6" height="5">
 														  <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
 													  </svg>
 												  </span>
-                        Letters</li>
-                      <li class="checker-list__item checker-special">
+                        Letters
+                      </li>
+                      <li class="checker-list__item"
+                          :class="has_special ? 'success' : '' "
+                      >
 												  <span class="checker-list__icon">
 													  <svg class="icon-check" width="6" height="5">
 														  <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
 													  </svg>
 												  </span>
-                        Special chacters
+                        Special characters
                       </li>
                     </ul>
                   </div>
                 </div>
                 <div class="form-page__wrp">
-                  <label class="form-page__label">Confirm your password <span class="form-page__required">(required)</span></label>
+                  <label class="form-page__label">Confirm your password <span
+                      class="form-page__required">(required)</span></label>
                   <div class="form-page__pole">
-                    <input type="password" class="form-page__input form-page__input-confirm" id="confirm-password">
-                    <span id="message"></span>
-                    <div class="icon-error ">&#33;</div>
-                    <div class="icon-done"></div>
+                    <input type="password"
+                           class="form-page__input form-page__input-confirm"
+                           v-model.trim="confirmPassword"
+                           :class="{
+                             invalid: ($v.confirmPassword.$dirty && !$v.confirmPassword.required) || ($v.confirmPassword.$dirty && !$v.confirmPassword.sameAsPassword),
+                             valid: ($v.confirmPassword.$dirty && $v.confirmPassword.required) && ($v.confirmPassword.$dirty && $v.confirmPassword.sameAsPassword)
+                           }"
+                    >
                   </div>
+                  <small class="error-text"
+                         v-if="$v.confirmPassword.$dirty && !$v.confirmPassword.required"
+                    >
+                    Confirm Password is required
+                  </small>
+                  <small class="error-text"
+                         v-else-if="$v.confirmPassword.$dirty && !$v.confirmPassword.sameAsPassword"
+                  >
+                    Passwords must match
+                  </small>
                 </div>
                 <div class="form-page__wrp">
                   <div class="form-page__text">By signing up, you're confirming you're OK with our
@@ -135,14 +196,18 @@
                   </div>
                 </div>
                 <div class="form-page__wrp">
-                  <button type="submit" class="form-page__btn btn" id="subBtn">Sign up</button>
+                  <button type="submit"
+                          class="form-page__btn btn"
+                          :disabled="isDisabled"
+                  >Sign up</button>
                 </div>
                 <div class="form-page__wrp">
                   <div class="form-page__text form-page__text_login">Already signed up?
                     <router-link
                         class="form-page__text_link"
                         to="/login"
-                    >Log in</router-link>
+                    >Log in
+                    </router-link>
                   </div>
                 </div>
               </form>
@@ -156,8 +221,11 @@
         <div class="site-footer__inner wow fadeInUp">
           <div class="site-footer__contact">
             <div class="site-footer__info">
-              <svg class="site-footer__icon" width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447716 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1V9C16 9.55228 15.5523 10 15 10H1C0.447715 10 0 9.55229 0 9V1ZM3.89132 2L8 5.22825L12.1087 2H3.89132ZM14 3.05746L8 7.77175L2 3.05746V8H14V3.05746Z" fill="#8C96A2"/>
+              <svg class="site-footer__icon" width="16" height="10" viewBox="0 0 16 10" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M0 1C0 0.447716 0.447715 0 1 0H15C15.5523 0 16 0.447715 16 1V9C16 9.55228 15.5523 10 15 10H1C0.447715 10 0 9.55229 0 9V1ZM3.89132 2L8 5.22825L12.1087 2H3.89132ZM14 3.05746L8 7.77175L2 3.05746V8H14V3.05746Z"
+                      fill="#8C96A2"/>
               </svg>
               <a href="email:support@safenetpay.com" class="site-footer__email">support@safenetpay.com</a>
             </div>
@@ -179,7 +247,7 @@
 </template>
 
 <script>
-import {email, required, minLength} from 'vuelidate/lib/validators'
+import {email, required, minLength, sameAs} from 'vuelidate/lib/validators'
 
 export default {
   name: "Register",
@@ -187,11 +255,19 @@ export default {
     name: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    has_minimum_length: false,
+    has_number: false,
+    has_letters: false,
+    has_special: false,
+    confirmPassword: '',
+    isOpen: false,
+    // isDisabled: true
   }),
   validations: {
+    name: {name, required, minLength: minLength(6)},
     email: {email, required},
-    password: {required, minLength: minLength(8)}
+    password: {required},
+    confirmPassword: {required, sameAsPassword: sameAs('password')}
   },
   methods: {
     submitHandler() {
@@ -201,6 +277,20 @@ export default {
         return
       }
       this.$router.push('/login')
+    },
+  },
+  watch: {
+    password() {
+      this.has_minimum_length = (this.password.length > 8);
+      this.has_number = /\d/.test(this.password);
+      this.has_letters = /[A-Za-z]/.test(this.password);
+      this.has_special = /[!@#\$%\^\&*\)\(+=._-]/.test(this.password);
+      this.confirmPassword = (this.password)
+    },
+  },
+  computed: {
+    isDisabled() {
+      return (this.name.length < 6)
     }
   }
 }

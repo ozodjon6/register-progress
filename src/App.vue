@@ -27,6 +27,7 @@ export default {
 <style lang="scss">
 @import "assets/bootstrap-grid.min.css";
 @import "assets/bootstrap.min.css";
+@import "~element-ui/lib/theme-chalk/index.css";
 @import "assets/auth-main.css";
 @import "assets/style.css";
 

@@ -3,6 +3,67 @@
     <div class="container">
       <div class="registry-part__inner review-page__inner">
         <RegistryPartHeader/>
+        <div class="review-page__plan mb72">
+          <div class="tariff-plan">
+            <h2 class="tariff-plan__title title">Choose Your plan</h2>
+            <div class="tariff-plan__inner">
+              <div class="tariff-plan__content">
+                <div class="tariff-plan__box tariff-plan__box_basic">
+                  <div class="plan-box">
+                    <div class="plan-box__name">BASIC - <span class="plan-box__name-red">£0</span> </div>
+                    <div class="plan-box__list">
+                      <dl class="plan-box__tariffs">
+                        <dt class="plan-box__tariffs-name">Account opening:</dt>
+                        <dd class="plan-box__tariffs-price">Free</dd>
+                      </dl>
+                      <dl class="plan-box__tariffs">
+                        <dt class="plan-box__tariffs-name">Internal payments:</dt>
+                        <dd class="plan-box__tariffs-price">Free</dd>
+                      </dl>
+                      <dl class="plan-box__tariffs">
+                        <dt class="plan-box__tariffs-name">GBP local payments:</dt>
+                        <dd class="plan-box__tariffs-price">£0.50</dd>
+                      </dl>
+                    </div>
+                    <div class="plan-box__footer">
+                      <button class="plan-box__select btn">
+                        Select plan
+                      </button>
+                      <a href="#" class="plan-box__text-more">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tariff-plan__content">
+                <div class="tariff-plan__box tariff-plan__box_premium">
+                  <div class="plan-box">
+                    <div class="plan-box__name">PREMIUM - <span class="plan-box__name-red">£25</span> </div>
+                    <div class="plan-box__list">
+                      <dl class="plan-box__tariffs">
+                        <dt class="plan-box__tariffs-name">Account opening:</dt>
+                        <dd class="plan-box__tariffs-price">Free</dd>
+                      </dl>
+                      <dl class="plan-box__tariffs">
+                        <dt class="plan-box__tariffs-name">Internal payments:</dt>
+                        <dd class="plan-box__tariffs-price">Free</dd>
+                      </dl>
+                      <dl class="plan-box__tariffs">
+                        <dt class="plan-box__tariffs-name">GBP local payments:</dt>
+                        <dd class="plan-box__tariffs-price">Free</dd>
+                      </dl>
+                    </div>
+                    <div class="plan-box__footer">
+                      <button class="plan-box__select plan-box__select_red btn">
+                        Select plan
+                      </button>
+                      <a href="#" class="plan-box__text-more plan-box__text-more_red">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="review-page__compliance">
           <div class="compliance-page">
             <div class="compliance-page__list">

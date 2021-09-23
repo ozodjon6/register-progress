@@ -95,7 +95,6 @@
           <button class="company-info__restart btn">Restart your application</button>
           <div class="company-info__percent">0%</div>
         </div>
-
       </div>
       <div class="dashboard-menu">
         <ul class="dashboard-menu__list">
@@ -449,7 +448,8 @@
                         class="dashboard-menu__title-text"
                         to="/login"
                         tag="div"
-                    >Log out</router-link>
+                    >Log out
+                    </router-link>
                   </div>
                   <div class="dashboard-menu__wrapper">
                     <ul class="dropdown-list">
@@ -483,9 +483,7 @@
 export default {
   name: "Sidebar",
   props: ['value'],
-  data: () => ({
-
-  }),
+  data: () => ({}),
   methods: {
     toMenu() {
       this.$router.push('/')

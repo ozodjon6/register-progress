@@ -3,9 +3,6 @@
     <div class="container">
       <div class="registry-part__inner">
         <RegistryPartHeader/>
-        <!-- <div class="registry-aprt__error is-error">
-          Some details are missing. Check the menu on the left to see which sections need your attention.
-        </div> -->
         <div class="registry-part__body">
           <div class="registry-part__company">
             <div class="company-reg">
@@ -23,13 +20,27 @@
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__choose">
-                        <select name="Country" class="company-reg__select">
-                          <option value="United Kingdom" class="country-reg__option">United Kingdom</option>
-                          <option value="Uzbekistan" class="country-reg__option">Uzbekistan</option>
-                        </select>
-                        <svg class="company-reg__up icon-up" width="10" height="5">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#up-down"></use>
-                        </svg>
+                        <!--                        <select name="Country" class="company-reg__select">-->
+                        <!--                          <option value="United Kingdom" class="country-reg__option">United Kingdom</option>-->
+                        <!--                          <option value="Uzbekistan" class="country-reg__option">Uzbekistan</option>-->
+                        <!--                        </select>-->
+                        <el-select
+                            v-model="options.value"
+                            multiple
+                            filterable
+                            allow-create
+                            default-first-option
+                            placeholder="United Kingdom">
+                          <el-option
+                              v-for="item in options"
+                              :key="item.value"
+                              :label="item.label"
+                              :value="item.value">
+                          </el-option>
+                        </el-select>
+<!--                        <svg class="company-reg__up icon-up" width="10" height="5">-->
+<!--                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#up-down"></use>-->
+<!--                        </svg>-->
                       </div>
                     </div>
                     <div class="company-reg__field">
@@ -42,7 +53,8 @@
                       </div>
                     </div>
                     <div class="company-reg__field is-active">
-                      <label class="company-reg__label form-page__label">Registration number <span class="form-page__required form-page__required_margin">(required)</span></label>
+                      <label class="company-reg__label form-page__label">Registration number <span
+                          class="form-page__required form-page__required_margin">(required)</span></label>
                       <div class="form-page__question company-reg__question" id="question-btn">
                         <svg class="icon-question" width="6" height="8">
                           <use xlink:href="@/assets/images/src/icons/sprite.svg#question"></use>
@@ -52,7 +64,8 @@
                         </div>
                       </div>
                       <div class="form-page__pole">
-                        <input type="number" class="form-page__input company-reg__input" id="password-field" required="" placeholder="placeholder text">
+                        <input type="number" class="form-page__input company-reg__input" id="password-field" required=""
+                               placeholder="placeholder text">
                         <div class="error-text">Please, don't forget to select your country</div>
                       </div>
                     </div>
@@ -61,10 +74,15 @@
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__pole">
-                        <input type="text" class="company-reg__input" required placeholder="MM/DD/YY">
-                        <svg class="icon-data icon-svg" width="14" height="16">
-                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#icon-data"></use>
-                        </svg>
+                        <!--                        <input type="text" class="company-reg__input" required placeholder="MM/DD/YY">-->
+                        <el-date-picker
+                            v-model="value1"
+                            type="date"
+                            placeholder="MM/DD/YY">
+                        </el-date-picker>
+                        <!--                        <svg class="icon-data icon-svg" width="14" height="16">-->
+                        <!--                          <use xlink:href="@/assets/images/src/icons/sprite-all.svg#icon-data"></use>-->
+                        <!--                        </svg>-->
                       </div>
                     </div>
                   </div>
@@ -93,7 +111,7 @@
                           <span class="company-reg__rquired"></span>
                         </label>
                         <input type="text" class="company-reg__input" required>
-                        <div class="error-text">Please, don't forget  your City</div>
+                        <div class="error-text">Please, don't forget your City</div>
                       </div>
                       <div class="company-reg__field">
                         <label class="company-reg__label"> Postcode
@@ -140,7 +158,7 @@
                           <span class="company-reg__rquired"></span>
                         </label>
                         <input type="text" class="company-reg__input" required>
-                        <div class="error-text">Please, don't forget  your City</div>
+                        <div class="error-text">Please, don't forget your City</div>
                       </div>
                       <div class="company-reg__field">
                         <label class="company-reg__label"> Postcode
@@ -184,7 +202,9 @@
                       </label>
                       <div class="company-reg__choose">
                         <select name="Country" class="company-reg__select">
-                          <option value="Select company type" disabled selected class="country-reg__option">Select company type</option>
+                          <option value="Select company type" disabled selected class="country-reg__option">Select
+                            company type
+                          </option>
                           <option value="Uzbekistan" class="country-reg__option">Uzbekistan</option>
                           <option value="UK" class="country-reg__option">UK</option>
                         </select>
@@ -228,13 +248,15 @@
                         <span class="company-reg__required"></span>
                       </label>
                       <div class="company-reg__pole">
-                        <textarea cols="5" rows="5" class="company-reg__textarea" placeholder="Explain what your business does in a few words"></textarea>
+                        <textarea cols="5" rows="5" class="company-reg__textarea"
+                                  placeholder="Explain what your business does in a few words"></textarea>
                         <div class="error-text">Please, don't forget your description</div>
                       </div>
                     </div>
                     <div class="company-reg__field">
                       <label class="company-reg__label company-reg__label_checkbox company-reg__label_buseness">
-                        <input type="checkbox" class="company-reg__input company-reg__input_checkbox" id="public" required>
+                        <input type="checkbox" class="company-reg__input company-reg__input_checkbox" id="public"
+                               required>
                         <span class="company-reg__mask">
                             <svg class="icon-mask icon-svg" width="12" height="9">
                               <use xlink:href="@/assets/images/src/icons/sprite.svg#check"></use>
@@ -265,11 +287,11 @@
                     </div>
                   </div>
                 </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 </template>
@@ -281,7 +303,21 @@ export default {
   name: "CompanyInformation",
   components: {
     RegistryPartHeader
-  }
+  },
+  data: () => ({
+    value1: '',
+    options: [{
+      value: 'United Kingdom',
+      label: 'United Kingdom'
+    }, {
+      value: 'Uzbekistan',
+      label: 'Uzbekistan'
+    }, {
+      value: 'Termez',
+      label: 'Termez'
+    }]
+
+  }),
 }
 </script>
 
